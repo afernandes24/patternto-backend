@@ -1,0 +1,25 @@
+{
+  "name": "album-pdf-api",
+  "version": "1.0.0",
+  "description": "Serverless PDF generation endpoint for album editor — Vercel + Puppeteer + Cloudinary",
+  "type": "module",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod",
+    "test": "node scripts/test-local.mjs"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "131.0.1",
+    "puppeteer-core": "22.15.0",
+    "cloudinary": "^2.10.0"
+  },
+  "devDependencies": {
+    "vercel": "^41.0.0"
+  },
+  "notes": {
+    "versions": "@sparticuz/chromium@131 is paired with puppeteer-core@22.x — this is the tested Vercel-compatible combination. Do NOT upgrade chromium without also checking puppeteer-core compatibility."
+  }
+}
