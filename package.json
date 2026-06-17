@@ -1,0 +1,23 @@
+{
+  "name": "album-pdf-api",
+  "version": "1.0.0",
+  "description": "Express PDF generation server for album editor — Railway + Puppeteer + Cloudinary",
+  "type": "module",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node scripts/test-local.mjs"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "131.0.1",
+    "cloudinary": "^2.10.0",
+    "express": "^4.19.2",
+    "puppeteer-core": "22.15.0"
+  },
+  "notes": {
+    "versions": "@sparticuz/chromium@131 is paired with puppeteer-core@22.x — tested combination. Do NOT upgrade chromium without checking puppeteer-core compatibility."
+  }
+}
