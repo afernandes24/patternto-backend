@@ -12,6 +12,11 @@ import puppeteer            from 'puppeteer-core';
 import { v2 as cloudinary } from 'cloudinary';
 import { Readable }         from 'stream';
 import { existsSync }       from 'fs';
+import path                 from 'path';
+import { fileURLToPath }    from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname  = path.dirname(__filename);
 
 // ── Cloudinary config ─────────────────────────────────────────────────────────
 cloudinary.config({
@@ -61,6 +66,10 @@ app.use((req, res, next) => {
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok' });
 });
+
+// ── Static assets (logo, stickers) ──────────────────────────────────────────
+// Served at https://<railway-domain>/assets/... — used by the editor frontend
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // ── POST /api/generate-pdf ────────────────────────────────────────────────────
 app.post('/api/generate-pdf', async (req, res) => {
