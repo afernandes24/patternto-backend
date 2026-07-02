@@ -88,8 +88,6 @@ export default async function handler(req, res) {
         '--disable-dev-shm-usage',
         '--disable-gpu',
         '--no-first-run',
-        '--no-zygote',
-        '--single-process',         // required on Vercel Lambda
         '--disable-extensions',
       ],
       defaultViewport: chromium.defaultViewport,
