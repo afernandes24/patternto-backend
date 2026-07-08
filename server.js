@@ -158,9 +158,15 @@ app.post('/api/generate-pdf', async (req, res) => {
     );
 
     // ── Generate PDF ──────────────────────────────────────────────────────────
+    // preferCSSPageSize: true → Chromium honors the @page CSS rules defined in
+    // editor.js (default @page { size:216mm 286mm } for interior/endpaper pages,
+    // and @page cover { size:...mm ...mm } for the cover page). This allows a
+    // single PDF to contain mixed page sizes (Cel #3 — dynamiczna okładka).
+    // Do NOT hardcode width/height here — that would override the CSS and force
+    // every page (including the cover) to the interior page size.
     const pdfBuffer = await page.pdf({
-  preferCSSPageSize: true,
-  printBackground: true,
+      preferCSSPageSize: true,
+      printBackground: true,
       margin: {
         top:    '0',
         right:  '0',
