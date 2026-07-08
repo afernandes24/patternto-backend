@@ -159,8 +159,8 @@ app.post('/api/generate-pdf', async (req, res) => {
 
     // ── Generate PDF ──────────────────────────────────────────────────────────
     const pdfBuffer = await page.pdf({
-      width:           '148mm',
-      height:          '210mm',
+      width:           '216mm',
+      height:          '286mm',
       printBackground: true,
       margin: {
         top:    '0',
