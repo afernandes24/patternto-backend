@@ -9,12 +9,14 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "test": "node scripts/test-local.mjs"
+    "test": "node scripts/test-local.mjs",
+    "migrate": "node scripts/migrate.mjs"
   },
   "dependencies": {
     "@sparticuz/chromium": "131.0.1",
     "cloudinary": "^2.10.0",
     "express": "^4.19.2",
+    "pg": "^8.23.0",
     "puppeteer-core": "22.15.0"
   },
   "notes": {
